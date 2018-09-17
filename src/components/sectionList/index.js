@@ -16,6 +16,7 @@ import TaskItem from '../../project-components/task-item'
 
 export default class RnSectionList extends React.PureComponent {
     getRenderItem = (data) => {
+        
         const { item, index, section, separators } = data
         console.log(separators)
         return (
@@ -35,19 +36,18 @@ export default class RnSectionList extends React.PureComponent {
     render () {
         return (
             <View>
-                {/* <SectionList
+                <SectionList
                 style={styles.taskList}
                 // initialNumToRender={2}
                 // inverted
                 renderSectionHeader={data => this.getHeader(data)}
                 renderItem={(data) => this.getRenderItem(data)}
                 sections={sectionListData2}
-                keyExtractor={(item, index) => item.taskId}
-                numColumns={1} /> */}
-            <FlatList
+                keyExtractor={(item, index) => item.taskId} />
+            {/* <SectionList
             numColumns={2}
             data={flatListData2}
-            renderItem={({item, index}) => <Text key={item.id} style={{marginRight: 10}}>{item.name}</Text>} />
+            renderItem={({item, index}) => <Text key={item.id} style={{marginRight: 10}}>{item.name}</Text>} /> */}
             </View>
         )
     }

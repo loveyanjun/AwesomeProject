@@ -11,7 +11,7 @@ import {
     // TabBarIOSItem
 } from 'react-native'
 import { Calendar } from 'react-native-calendars'
-import Hello from './hello'
+// import Hello from './hello'
 import SectionList from '../components/sectionList/index'
 
 export default class HelloWord extends Component {
