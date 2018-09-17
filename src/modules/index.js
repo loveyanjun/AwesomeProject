@@ -12,7 +12,9 @@ import {
 } from 'react-native'
 import { Calendar } from 'react-native-calendars'
 // import Hello from './hello'
-import SectionList from '../components/sectionList/index'
+// import SectionList from '../components/sectionList/index'
+import MyLinearGradient from '../components/myLinearGradient/index'
+// import LinearGradient from 'react-native-linear-gradient'
 
 export default class HelloWord extends Component {
     pressButton = () => {
@@ -30,15 +32,22 @@ export default class HelloWord extends Component {
     render () {
         return (
             <View style={styles.container}>
-                <SectionList />
-                <TabBarIOS>
+                {/* <View>
+                <LinearGradient
+                    style={styles.spot}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 0, y: 0 }}
+                    colors={['#f0924a', '#f6c475']} />
+                </View> */}
+                <MyLinearGradient />
+                {/* <TabBarIOS>
                     <TabBarIOS.Item title='推荐' onPress={this.handleTabBarPress}>
                         推荐
                     </TabBarIOS.Item>
                     <TabBarIOS.Item title='重庆'>重庆</TabBarIOS.Item>
                     <TabBarIOS.Item title='公司'>公司</TabBarIOS.Item>
                     <TabBarIOS.Item title='要求'>要求</TabBarIOS.Item>
-                </TabBarIOS>
+                </TabBarIOS> */}
             </View>
         )
     }
