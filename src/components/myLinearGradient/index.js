@@ -13,9 +13,9 @@ export default class MyLinearGradient extends React.PureComponent {
                 <Text>两色渐变</Text>
                 <LinearGradient
                     style={styles.spot}
-                    start={{ x: 0, y: 0 }}
+                    start={{ x: 1, y: 0 }}
                     end={{ x: 0, y: 1 }}
-                    colors={['red', 'yellow', 'blue']} />
+                    colors={['red', 'green']} />
             </View>
         )
     }
@@ -23,17 +23,17 @@ export default class MyLinearGradient extends React.PureComponent {
 
 const styles = StyleSheet.create({
     spotWrap: {
-        width: 200,
-        height: 200,
-        backgroundColor: '#eee'
+        // width: 300,
+        // height: 300,
+        // backgroundColor: '#eee'
         // borderWidth: 1,
         // borderStyle: 'solid',
         // borderColor: '#eee'
     },
     spot: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
+        width: 700,
+        height: 200,
+        // borderRadius: 100,
         backgroundColor: '#f6c475'
     }
 })

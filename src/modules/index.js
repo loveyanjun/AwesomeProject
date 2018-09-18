@@ -1,77 +1,26 @@
 import React, { Component } from 'react'
-import {
-    StyleSheet,
-    View,
-    Text,
-    ActivityIndicator,
-    Button,
-    DatePickerIOS,
-    TabBarIOS,
-    TabBarIOSItem
-    // TabBarIOSItem
-} from 'react-native'
 import { Calendar } from 'react-native-calendars'
-// import Hello from './hello'
-// import SectionList from '../components/sectionList/index'
-import MyLinearGradient from '../components/myLinearGradient/index'
-// import LinearGradient from 'react-native-linear-gradient'
+import { createStackNavigator } from 'react-navigation'
+import Home from '../components/home/index'
+import Detail from '../components/detail/index'
 
-export default class HelloWord extends Component {
-    pressButton = () => {
-        console.log('pressbutton')
-    }
+const RootStack = createStackNavigator(
+    {
+        // Home: {
+        //     sreen: Home
+        // }
+        Home: Home, // 路由：路由配置
+        Details: Detail
+    }, 
+    {
+    initialRouteName: 'Home' // 这里的Home指的是对应的路由，不是路由配置
+}
+)
 
-    handleDate = () => {
-        console.log('handleDate')
-    }
-
-    handleTabBarPress = () => {
-        alert('handbarperess')
-    }
-
+export default class APP extends Component {
     render () {
         return (
-            <View style={styles.container}>
-                {/* <View>
-                <LinearGradient
-                    style={styles.spot}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 0, y: 0 }}
-                    colors={['#f0924a', '#f6c475']} />
-                </View> */}
-                <MyLinearGradient />
-                {/* <TabBarIOS>
-                    <TabBarIOS.Item title='推荐' onPress={this.handleTabBarPress}>
-                        推荐
-                    </TabBarIOS.Item>
-                    <TabBarIOS.Item title='重庆'>重庆</TabBarIOS.Item>
-                    <TabBarIOS.Item title='公司'>公司</TabBarIOS.Item>
-                    <TabBarIOS.Item title='要求'>要求</TabBarIOS.Item>
-                </TabBarIOS> */}
-            </View>
+            <RootStack />
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        paddingTop: 40,
-        flex: 1,
-        justifyContent: 'flex-start'
-    },
-    activityIndicator: {
-        backgroundColor: '#ea8672'
-    },
-    button: {
-        backgroundColor: '#93f47b'
-    },
-    datePickerIos: {
-        backgroundColor: '#fc92f1'
-    },
-    tabBar: {
-        flex: 1,
-        flexDirection:  'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center'
-    }
-})
