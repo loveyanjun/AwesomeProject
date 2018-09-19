@@ -13,7 +13,17 @@ const RootStack = createStackNavigator(
         Details: Detail
     }, 
     {
-    initialRouteName: 'Home' // 这里的Home指的是对应的路由，不是路由配置
+    initialRouteName: 'Home', // 这里的Home指的是对应的路由，不是路由配置
+    navigationOptions: {
+        title: '共享标题',
+        headerStyle: {
+            backgroundColor: '#42b983'
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: '100'
+        }
+    }
 }
 )
 

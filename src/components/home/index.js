@@ -14,6 +14,10 @@ import { Calendar } from 'react-native-calendars'
 import MyLinearGradient from '../myLinearGradient/index'
 
 export default class Root extends Component {
+    static navigationOptions = {
+        title: '主页'
+    }
+
     pressButton = () => {
         console.log('pressbutton')
     }
@@ -27,25 +31,19 @@ export default class Root extends Component {
     }
 
     render () {
+        console.log('1121')
+        console.log(this.props)
         return (
             <View style={styles.container}>
-                {/* <View>
-                <LinearGradient
-                    style={styles.spot}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 0, y: 0 }}
-                    colors={['#f0924a', '#f6c475']} />
-                </View> */}
                 <MyLinearGradient />
-                {/* <TabBarIOS>
-                    <TabBarIOS.Item title='推荐' onPress={this.handleTabBarPress}>
-                        推荐
-                    </TabBarIOS.Item>
-                    <TabBarIOS.Item title='重庆'>重庆</TabBarIOS.Item>
-                    <TabBarIOS.Item title='公司'>公司</TabBarIOS.Item>
-                    <TabBarIOS.Item title='要求'>要求</TabBarIOS.Item>
-                </TabBarIOS> */}
-                <Button title='Go to Detail' onPress={()=> this.props.navigation.navigate('Details')}/>
+                {/* 路由跳转 */}
+                {/* <Button title='Go to Detail' onPress={()=> this.props.navigation.navigate('Details')}/> */}
+                {/* <Button title='Go to Detail' onPress={()=> this.props.navigation.push('Details')}/> */}
+                <Button title='Go to Detail!' onPress={()=> this.props.navigation.push('Details', {
+                itemId: 12,
+                type: 'xxx'
+                // title: '详情页面展示了'
+                })}/>
             </View>
         )
     }
@@ -53,7 +51,7 @@ export default class Root extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#f0f',
+        backgroundColor: '#eee',
         paddingTop: 40,
         flex: 1,
         justifyContent: 'flex-start'
