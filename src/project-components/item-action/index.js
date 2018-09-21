@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   actionButton: {
     color: '#fff',
-    textAlign: 'center',
+    // textAlign: 'center',
     lineHeight: 25,
     fontSize: 12
   },

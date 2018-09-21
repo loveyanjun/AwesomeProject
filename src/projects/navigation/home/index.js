@@ -4,6 +4,7 @@ import {
     View,
     Text,
     ActivityIndicator,
+    AsyncStorage,
     Button,
     // DatePickerIOS,
     // TabBarIOS,
@@ -11,11 +12,11 @@ import {
     // TabBarIOSItem
 } from 'react-native'
 import { Calendar } from 'react-native-calendars'
-import MyLinearGradient from '../myLinearGradient/index'
+// import MyLinearGradient from '../myLinearGradient/index'
 
 export default class Root extends Component {
     static navigationOptions = {
-        title: '主页'
+        title: 'Welcome to the app'
     }
 
     pressButton = () => {
@@ -30,20 +31,39 @@ export default class Root extends Component {
         alert('handbarperess')
     }
 
+    _showMoreApp = () => {
+        this.props.navigation.navigate('Other')
+    }
+
+    _signOut = async () => {
+        await AsyncStorage.clear()
+        this.props.navigation.navigate('AppLoading')
+    }
+
     render () {
         console.log('1121')
         console.log(this.props)
         return (
             <View style={styles.container}>
-                <MyLinearGradient />
+                <Text>主页面内容</Text>
+                {/* <MyLinearGradient /> */}
                 {/* 路由跳转 */}
                 {/* <Button title='Go to Detail' onPress={()=> this.props.navigation.navigate('Details')}/> */}
                 {/* <Button title='Go to Detail' onPress={()=> this.props.navigation.push('Details')}/> */}
-                <Button title='Go to Detail!' onPress={()=> this.props.navigation.push('Details', {
+
+                {/* <Button title='Go to Detail!' onPress={()=> this.props.navigation.push('Details', {
                 itemId: 12,
-                type: 'xxx'
-                // title: '详情页面展示了'
-                })}/>
+                type: 'xxx',
+                title: '详情页面展示了'
+                })}/> */}
+
+                <Text>----------------分割线-----------------</Text>
+                <Text>验证createSwitchStack</Text>
+                
+                <View>
+                    <Button title='start to show the app' color='#ea8672' onPress={this._showMoreApp}/>
+                    <Button title='退出' color='#fc92f1' onPress={this._signOut} />
+                </View>
             </View>
         )
     }
@@ -51,7 +71,7 @@ export default class Root extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#eee',
+        backgroundColor: '#fff',
         paddingTop: 40,
         flex: 1,
         justifyContent: 'flex-start'

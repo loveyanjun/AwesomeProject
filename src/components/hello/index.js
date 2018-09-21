@@ -32,7 +32,7 @@ export default class HelloWord extends Component {
                 {/* <View style={styles.activityIndicator}>
                     <Text>ActivityIndicator练习</Text>
                     <ActivityIndicator size='large' color='#f0f' animating={false}></ActivityIndicator>
-                    <ActivityIndicator size='small' color='red' style={{backgroundColor: 'blue'}}></ActivityIndicator>
+                    <ActivityIndicator size='small' color='red' style={{backgroundColor: '#0f0'}}></ActivityIndicator>
                     <ActivityIndicator size='large' color='#b0f' hidesWhenStopped></ActivityIndicator>
                 </View>
                 <View style={styles.button}>
