@@ -14,12 +14,7 @@ export default class HelloWord extends Component {
     }
 }
 
-// import { AppRegistry } from 'react-native'
-// import App from './src/modules'
+import { AppRegistry } from 'react-native'
+import App from './src/modules'
 
-// AppRegistry.registerComponent('awesomeProject', () => APP)
-
-// import { AppRegistry } from 'react-native'
-// import App from './src/app'
-
-// AppRegistry.registerComponent('mobileClient', () => App)
+AppRegistry.registerComponent('awesomeProject', () => APP)
