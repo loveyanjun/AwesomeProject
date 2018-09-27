@@ -1,13 +1,4 @@
-import React from 'react'
-import {
-    View,
-    Text,
-    StyleSheet
-} from 'react-native'
-import Job from './job'
-// import { jobs } from '../../utils/app/constants'
-
-const jobs = [{
+export const jobs = [{
     id: 1,
     name: '金融产品经理',
     minSalary: '10K',
@@ -44,27 +35,3 @@ const jobs = [{
     avatar: '',
     publisher: '发布人'
 }]
-
-export default class Home extends React.PureComponent {
-    render () {
-    console.log('yyyyyyyy')
-    console.log(jobs)
-        return (
-            <View style={styles.jobsContainer}>
-                {jobs.map((item) => {
-                    return (
-                        <Job
-                        key={item.id}
-                        item={item} /> 
-                    )
-                })}
-                <Job />
-            </View>
-        )
-    }
-}
-
-const styles = StyleSheet.create({
-    jobsContainer: {
-    }
-})
