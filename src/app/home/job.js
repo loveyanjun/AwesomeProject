@@ -3,51 +3,56 @@ import PropTypes from 'prop-types'
 import {
     View,
     Text,
+    TouchableHighlight,
     StyleSheet
 } from 'react-native'
 
 export default class Job extends React.PureComponent {
     static propTypes = {
-        item: PropTypes.object
+        // navigation: PropTypes.
+        item: PropTypes.object,
+        navigation: PropTypes.object
+    }
+
+    goToDetail = () => {
+        console.log('去详情页面')
+        console.log(this.props.navigation)
+        // this.props.navigation.navigate('Detail')
     }
 
     render () {
-        console.log('mmmmmmmm')
-        console.log(this.props.item)
-        // const {
-        //     name,
-        //     minSalary,
-        //     maxSalary,
-        //     company,
-        //     finance,
-        //     address,
-        //     experience,
-        //     education,
-        //     publisher } = this.props.item
-        // console.log('ddd')
-        // console.log(name)
-        // const company = this.props.item && this.props.item.company
-        const { name } = this.props.item
+        const {
+            name,
+            minSalary,
+            maxSalary,
+            company,
+            finance,
+            address,
+            experience,
+            education,
+            publisher } = this.props.item || {}
 
         return (
-            <View style={styles.job}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('Detail')}>
+                <View style={styles.job}>
                 <View style={styles.nameSalary}>
-                    <Text style={styles.name}>金融产品经理</Text>                
-                    <Text style={styles.salary}>10K-20K</Text>
+                    <Text style={styles.name}>{name}</Text>                
+                    <Text style={styles.salary}>{minSalary}-{maxSalary}</Text>
                 </View>
                 <View style={styles.companyFinance}>
-                    <Text style={styles.company}>中顺</Text>
-                    <Text style={styles.finance}>不需要融资</Text>
+                    <Text style={styles.company}>{company}</Text>
+                    <Text style={styles.finance}>{finance}</Text>
                 </View>
                 <View style={styles.addRessExperienceEdu}>
-                    <Text style={styles.address}>阿拉善</Text>
-                    <Text style={styles.experience}>经验不限</Text>
-                    <Text style={styles.education}>学历不限</Text>
+                    <Text style={styles.address}>{address}</Text>
+                    <Text style={styles.experience}>{experience}</Text>
+                    <Text style={styles.education}>{education}</Text>
                 </View>
                 <View style={styles.publisher}>
-                    <Text>付莹莹.招聘者</Text>
+                    <Text>{publisher}</Text>
                 </View>
             </View>
+            </TouchableHighlight>
         )
     }
 }

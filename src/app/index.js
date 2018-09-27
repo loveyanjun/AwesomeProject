@@ -8,6 +8,7 @@ import Home from './home'
 import Company from './company'
 import Message from './message'
 import Myself from './myself'
+import Detail from './home/detail'
 
 
 // const RootStack = createBottomTabNavigator({

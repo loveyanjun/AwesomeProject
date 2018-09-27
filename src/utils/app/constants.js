@@ -9,7 +9,7 @@ export const jobs = [{
     experience: '经验不限',
     education: '学历不限',
     avatar: '',
-    publisher: '发布人'
+    publisher: '付莹莹.发布人'
 }, {
     id: 2,
     name: '销售代表',
@@ -21,7 +21,7 @@ export const jobs = [{
     experience: '1-3年',
     education: '本科',
     avatar: '',
-    publisher: '发布人'
+    publisher: '付莹莹.发布人'
 }, {
     id: 3,
     name: '全职教师',
@@ -33,5 +33,5 @@ export const jobs = [{
     experience: '经验不限',
     education: '学历不限',
     avatar: '',
-    publisher: '发布人'
+    publisher: '付莹莹.发布人'
 }]
