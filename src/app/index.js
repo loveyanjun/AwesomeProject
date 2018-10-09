@@ -67,23 +67,26 @@ const RootStack = createBottomTabNavigator({
     '消息': createStackNavigator({
         screen: Message
     }),
-    '我的': createStackNavigator({
-        screen: Myself,
-        navigationOptions: ({navigation}) => ({
-            title: '我我我'
-            // tabBarIcon: ({focused, tintColor}) => {
-            //     return <Ionicons name="ios-home" />
-            // }
-        })
-    }, {
-        navigationOptions: ({navigation}) => ({
-            tabBarIcon: ({focused, tintColor}) => {
-                return <Ionicons name="ios-home" />
-            }
-        })
-    })
+    // '我的': createStackNavigator({
+    //     screen: Myself,
+    //     navigationOptions: ({navigation}) => ({
+    //         title: '我我我'
+    //         // tabBarIcon: ({focused, tintColor}) => {
+    //         //     return <Ionicons name="ios-home" />
+    //         // }
+    //     })
+    // }, {
+    //     navigationOptions: ({navigation}) => ({
+    //         tabBarIcon: ({focused, tintColor}) => {
+    //             return <Ionicons name="ios-home" />
+    //         }
+    //     })
+    // })
+    '我的': {
+        screen: Myself
+    }
 }, {
-    initialRouteName: '职位',
+    initialRouteName: '我的',
     navigationOptions: ({navigation}) => ({
         // title: '首页',
         tabBarIcon: ({focused, tintColor}) => {
