@@ -37,30 +37,30 @@ import Detail from './home/detail'
 // })
 
 const RootStack = createBottomTabNavigator({
-    '职位': createStackNavigator({
-        screen: Home
-    }, {
-        headerMode: 'screen',
-        navigationOptions: ({navigation}) => ({
-            // title: 'web前端',
-            headerTitle: 'web前端',
-            headerStyle: {
-                backgroundColor: '#52cbc5'
-            },
-            headerTintColor: '#fff'
-        })
-        // navigationOptions: {
-        //     title: '教育',
-        //     tabBarIcon: ({tintColor}) => (<Ionicons name="ios-home" />)
-        // }
-    }),
-    // '职位': {
-    //     screen: Home,
+    // '职位': createStackNavigator({ // Geenie: 这里不应该有createStackNavigator，有的话，则会多出顶部header
+    //     screen: Home
+    // }, {
+    //     headerMode: 'screen',
     //     navigationOptions: ({navigation}) => ({
-    //         title: '职位信息',
-    //         headerTitlel: 'haha'
+    //         // title: 'web前端',
+    //         headerTitle: 'web前端',
+    //         headerStyle: {
+    //             backgroundColor: '#52cbc5'
+    //         },
+    //         headerTintColor: '#fff'
     //     })
-    // },
+    //     // navigationOptions: {
+    //     //     title: '教育',
+    //     //     tabBarIcon: ({tintColor}) => (<Ionicons name="ios-home" />)
+    //     // }
+    // }),
+    '职位': {
+        screen: Home
+        // navigationOptions: ({navigation}) => ({
+        //     title: '职位信息',
+        //     headerTitlel: 'haha'
+        // })
+    },
     '公司': createStackNavigator({
         screen: Company
     }),

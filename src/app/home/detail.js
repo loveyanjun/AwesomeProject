@@ -6,9 +6,11 @@ import {
 } from 'react-native'
 
 export default class Detail extends React.PureComponent {
+    static navigationOptions = {
+        title: '详情页'
+    }
+
     render () {
-        console.log('detail....')
-        console.log(this.props.navigation)
         return (
             <View>
                 <Text>详情页面</Text>

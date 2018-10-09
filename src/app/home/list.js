@@ -8,6 +8,10 @@ import Job from './job'
 import { jobs } from '../../utils/app/constants'
 
 export default class List extends React.PureComponent {
+    static navigationOptions = {
+        title: 'web前端'
+    }
+
     render () {
         return (
             <View style={styles.jobsContainer}>
@@ -19,7 +23,6 @@ export default class List extends React.PureComponent {
                         navigation={this.props.navigation} /> 
                     )
                 })}
-                <Job />
             </View>
         )
     }
