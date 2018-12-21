@@ -44,5 +44,8 @@ const styles = StyleSheet.create({
     },
     maskContent: {
         backgroundColor: '#fff'
+        // position: 'relative', //TODO：设置定位改变位置，效果更好
+        // bottom: 300
+        // marginBottom: 200
     }
 })
