@@ -1,12 +1,8 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import Button from '../components/button/index'
 
 export default class TestComponent extends React.PureComponent {
-  state = {
-    // modalVisible: false,
-    // inputValue: 'sss'
-  }
 
   handleBtn = () => {
     console.log('handleBtn')
@@ -15,7 +11,7 @@ export default class TestComponent extends React.PureComponent {
   render() {
     return (
       <View style={styles.test}>
-        <Text>Touch相关</Text>
+        <Text>button:</Text>
         <Button style={styles.testButton} onPress={this.handleBtn}>点击</Button>
       </View>
     )
@@ -28,7 +24,7 @@ const styles = StyleSheet.create({
   },
   testButton: {
     // width: 200,
-    width: '100%',
+    // width: '100%',
     backgroundColor: '#f9f'
   }
 })
