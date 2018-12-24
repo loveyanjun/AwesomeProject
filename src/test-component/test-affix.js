@@ -1,9 +1,8 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
-import FlatListTest from '../project-components/flatlist/index'
+import Affix from '../components/affix/index'
 
 export default class TestComponent extends React.PureComponent {
-
   handleBtn = () => {
     console.log('handleBtn')
   }
@@ -11,8 +10,8 @@ export default class TestComponent extends React.PureComponent {
   render() {
     return (
       <View style={styles.test}>
-        <Text>列表相关</Text>
-        <FlatListTest />
+        <Text>Touch相关</Text>
+        <Affix>置顶</Affix>
       </View>
     )
   }
