@@ -47,4 +47,25 @@ export const flatlistData = [{
     quarter: '第二季度',
     percent: '0.12',
     money: 2343.45
+}, {
+    id: 8,
+    name: '材料费',
+    des: '描述内容',
+    percent: '0.3',
+    quarter: '第三季度',
+    money: 23.3
+}, {
+    id: 9,
+    name: '机械费',
+    des: '描述内容',
+    quarter: '第四季度',
+    percent: '0.4',
+    money: 66.11
+}, {
+    id: 10,
+    name: '会员费',
+    des: '描述内容。。',
+    quarter: '第一季度',
+    percent: '0.1',
+    money: 99.99
 }]

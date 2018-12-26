@@ -7,6 +7,10 @@ import {
 } from 'react-native'
 import { flatlistData } from './constants'
 
+/*
+
+*/
+
 export default class FlatListRefresh extends React.PureComponent {
     render () {
         return (
@@ -15,8 +19,10 @@ export default class FlatListRefresh extends React.PureComponent {
                 keyExtractor={(item, index) => item.id}
                 renderItem={this.renderItem}
                 data={flatlistData}
-                onEndReachedThreshold={0}
+                onEndReachedThreshold={0} // 默认值为2
                 onEndReached={this.handleEndReched}
+                // 最好设置onEndReachedThreshold，并且设置为比较小的数值；
+                // 如果不设置onEndReachedThreshold，onEndReachedThreshold的默认值为2，所以，页面初始化的时候，onEndReached方法会被执行两次
                  />
             </View>
         )
@@ -41,6 +47,22 @@ export default class FlatListRefresh extends React.PureComponent {
 
     handleEndReched = () => {
         console.log('实现分页')
+        for (let i = 1; i < 5; i++) {
+            flatlistData.push({
+                id: 10 + i,
+                name: `名称${i}`,
+                des: '描述内容',
+                quarter: '第一季度',
+                percent: '0.1',
+                money: 9109.99
+            })
+        }
+        // 正常的分页情况：
+        // this.fetData({
+        //     pageNo: this.pageNo++,
+        //     pageSize: 10,
+        //     offset: 10 * this.pageNo
+        // })
     }
 }
 
