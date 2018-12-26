@@ -45,8 +45,8 @@ export default class Button extends React.PureComponent {
 
 const styles = StyleSheet.create({
     button: {
-        width: 100,
-        height: 40,
+        paddingVertical: 15,
+        paddingHorizontal: 10,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#1890ff',

@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
-import FlatListTest from '../project-components/flatlist/index'
+// import FlatListTest from '../project-components/flatlist/index'
+// import FlatListScrollTo from '../project-components/flatlist-scroll-to/index'
+import FlatListRefresh from '../project-components/flatlist-refresh/index'
 
 export default class TestComponent extends React.PureComponent {
 
@@ -12,7 +14,7 @@ export default class TestComponent extends React.PureComponent {
     return (
       <View style={styles.test}>
         <Text>列表相关</Text>
-        <FlatListTest />
+        <FlatListRefresh />
       </View>
     )
   }

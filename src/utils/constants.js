@@ -106,29 +106,3 @@ export const flatListData2 = [{
     id: 4,
     name: 'Java'
 }]
-
-export const flatlist = [{
-    id: 1,
-    name: '哈哈哈',
-    des: '表情'
-}, {
-    id: 2,
-    name: '嘿嘿嘿',
-    des: '表情'
-}, {
-    id: 3,
-    name: '呵呵呵',
-    des: '表情'
-}, {
-    id: 4,
-    name: '笑脸',
-    des: '表情'
-}, {
-    id: 5,
-    name: '急急急',
-    des: '表情'
-}, {
-    id: 6,
-    name: '嘻嘻嘻',
-    des: '表情'
-}]
