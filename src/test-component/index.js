@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     marginTop: 100
   },
   testButton: {
-    // width: 200,
     width: '100%',
     backgroundColor: '#f9f'
   }

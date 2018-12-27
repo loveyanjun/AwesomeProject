@@ -8,9 +8,11 @@ import {
 import { flatlistData } from './constants'
 
 /*
-
+onEndReachedThreshold： 0.5 表示距离内容最底部的距离为当前列表可见长度的一半时触发。
+onEndReached： 在使用前必须设置onEndReachedThreshold的值，因为onEndReachedThreshold的默认值为2
 */
 
+let startIndex = 10
 export default class FlatListRefresh extends React.PureComponent {
     render () {
         return (
@@ -47,9 +49,12 @@ export default class FlatListRefresh extends React.PureComponent {
 
     handleEndReched = () => {
         console.log('实现分页')
-        for (let i = 1; i < 5; i++) {
+        for (let i = 1; i < 6; i++) {
+            startIndex++
+            const id = startIndex
+            // 上面代码不能写成：const id = startIndex++ ，如果写成这样，则先将startIndex复制给id， 然后再执行加 1 操作。。
             flatlistData.push({
-                id: 10 + i,
+                id,
                 name: `名称${i}`,
                 des: '描述内容',
                 quarter: '第一季度',
