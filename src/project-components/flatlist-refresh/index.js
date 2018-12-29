@@ -3,29 +3,65 @@ import {
     View,
     Text,
     FlatList,
+    RefreshControl,
     StyleSheet
 } from 'react-native'
 import { flatlistData } from './constants'
+import Loading from '../../components/loading/index'
 
 /*
+// 下拉加载更多：
 onEndReachedThreshold： 0.5 表示距离内容最底部的距离为当前列表可见长度的一半时触发。
 onEndReached： 在使用前必须设置onEndReachedThreshold的值，因为onEndReachedThreshold的默认值为2
 */
 
 let startIndex = 10
 export default class FlatListRefresh extends React.PureComponent {
+    constructor(props) {
+        super(props)
+        this.state={
+            refreshing: true
+        }
+    }
+
+    componentDidMount () {
+       this.load = setTimeout(() => {
+            this.setState({
+                refreshing: false
+            })
+        }, 1000);
+    }
+
+    componentWillUnmount () {
+        clearTimeout(this.load)
+    }
+
     render () {
+        const { refreshing } = this.state
         return (
             <View>
-                <FlatList
-                keyExtractor={(item, index) => item.id}
-                renderItem={this.renderItem}
-                data={flatlistData}
-                onEndReachedThreshold={0} // 默认值为2
-                onEndReached={this.handleEndReched}
-                // 最好设置onEndReachedThreshold，并且设置为比较小的数值；
-                // 如果不设置onEndReachedThreshold，onEndReachedThreshold的默认值为2，所以，页面初始化的时候，onEndReached方法会被执行两次
-                 />
+                {refreshing ? (
+                    <Loading color='#0af' size='large' />
+                ) : (
+                    <FlatList
+                    keyExtractor={(item, index) => item.id}
+                    renderItem={this.renderItem}
+                    data={flatlistData}
+                    onEndReachedThreshold={0} // 默认值为2
+                    onEndReached={this.handleEndReched}
+                    // 最好设置onEndReachedThreshold，并且设置为比较小的数值；
+                    // 如果不设置onEndReachedThreshold，onEndReachedThreshold的默认值为2，所以，页面初始化的时候，onEndReached方法会被执行两次
+                    // refreshing={false}
+                    // onRefresh={this.handleRefresh}
+                    refreshControl={
+                        <RefreshControl
+                        tintColor='blue'
+                        colors='red'
+                        refreshing={refreshing}
+                        onRefresh={this.handleRefresh} />
+                    }
+                     />
+                )}
             </View>
         )
     }
@@ -67,6 +103,13 @@ export default class FlatListRefresh extends React.PureComponent {
         //     pageNo: this.pageNo++,
         //     pageSize: 10,
         //     offset: 10 * this.pageNo
+        // })
+    }
+
+    handleRefresh = () => {
+        console.log('下拉刷新')
+        // this.setState({
+        //     refreshing: true
         // })
     }
 }
