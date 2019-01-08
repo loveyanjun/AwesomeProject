@@ -17,7 +17,15 @@ export default class ImageTest extends React.PureComponent {
                 onLoad={this.handleLoad}
                 onLoadStart={this.handleLoadStart}
                 onLoadEnd={this.handleLoadEnd}
-                resizeMode='stretch'
+                resizeMode='contain'
+                // loadingIndicatorSource={require('./images/indicator.jpg')}
+                resizeMethod='scale'
+                accessibilityLabel='图片的属性'
+                accessible
+                defaultSource={require('./images/indicator.jpg')}
+                onPartialLoad={this.handlePartical}  // TODO: 未调用
+                onProgress={this.handleProgress} // TODO: 未调用
+                // fadeDuration={1000}
                 />
             </View>
         )
@@ -41,17 +49,26 @@ export default class ImageTest extends React.PureComponent {
         console.log(e)
         console.log('图片加载结束')
     }
+
+    handlePartical = () => {
+        console.log('逐步加载。。。。')
+    }
+
+    handleProgress = (event) => {
+        console.log('加载过程中不断调用')
+        console.log(event)
+    }
 }
 
 const styles = StyleSheet.create({
     imageWrap: {
-        width: 300,
-        height: 300,
+        // width: 300,
+        // height: 300,
         backgroundColor: '#f0f'
     },
     image: {
-        width: 240,
-        height: 240,
-        borderRadius: 120
+        // width: 240,
+        // height: 240,
+        // borderRadius: 120
     }
 })

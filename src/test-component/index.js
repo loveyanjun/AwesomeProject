@@ -4,7 +4,10 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-nativ
 // import FlatListScrollTo from '../project-components/flatlist-scroll-to/index'
 // import FlatListRefresh from '../project-components/flatlist-refresh/index'
 // import CssProps from '../project-components/css-props/index'
-import ImageTest from '../project-components/test-image/index'
+// import ImageTest from '../project-components/test-image/index'
+// import MaskedViewIos from '../project-components/test-masked-view/index'  // 未验证
+// import PickerTest from '../project-components/test-picker/index'
+import RefreshControlTest from '../project-components/test-refresh-control/index'
 
 export default class TestComponent extends React.PureComponent {
 
@@ -15,8 +18,8 @@ export default class TestComponent extends React.PureComponent {
   render() {
     return (
       <View style={styles.test}>
-        <Text>列表相关</Text>
-        <ImageTest />
+        <Text>makedViewIos</Text>
+        <RefreshControlTest />
       </View>
     )
   }
