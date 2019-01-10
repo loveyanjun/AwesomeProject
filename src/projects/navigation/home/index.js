@@ -14,6 +14,7 @@ import {
 import { Calendar } from 'react-native-calendars'
 // import MyLinearGradient from '../myLinearGradient/index'
 
+
 export default class Root extends Component {
     static navigationOptions = {
         title: 'Welcome to the app'

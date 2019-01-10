@@ -4,7 +4,6 @@ import {
     Text,
     Button
 } from 'react-native'
-// import LogoTitle from '../../project-components/logo-title'
 
 export default class Detail extends React.PureComponent {
     // static navigationOptions = {
@@ -51,4 +50,3 @@ export default class Detail extends React.PureComponent {
         )
     }
 }
-
