@@ -4,13 +4,23 @@ import {
     Text,
     StyleSheet
 } from 'react-native'
+import { createStackNavigator } from 'react-navigation'
+import List from './list'
+import Qrcode from './qrcode'
 
-export default class Message extends React.PureComponent {
+const MyselfStack = createStackNavigator({
+    List: {
+        screen: List
+    },
+    Qrcode: {
+        screen: Qrcode
+    }
+})
+
+export default class Myself extends React.PureComponent {
     render () {
         return (
-            <View>
-                <Text>我的内容</Text>
-            </View>
+            <MyselfStack />
         )
     }
 }

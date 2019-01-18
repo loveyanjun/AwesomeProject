@@ -23,9 +23,10 @@ const RootStack = createStackNavigator(
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: '100'
+            fontWeight: 'bold'
         }
     }
+    // mode: 'modal'
 })
 
 const AuthStack = createStackNavigator({
